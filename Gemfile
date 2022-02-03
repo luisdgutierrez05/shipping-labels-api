@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Ruby Version
 ruby "3.0.3"
 
+# AASM is a continuation of the acts-as-state-machine rails plugin, built for plain Ruby objects.
+gem 'aasm', '~> 5.2'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -45,6 +48,9 @@ group :test do
 end
 
 group :development do
+  # Annotates Rails/ActiveRecord Models based on the database schema.
+  gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
+
   # Automatic Rails code style checking tool.
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false

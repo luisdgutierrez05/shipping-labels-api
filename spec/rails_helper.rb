@@ -8,6 +8,7 @@ require 'support/factory_bot'
 require 'support/shoulda_matchers'
 require 'support/database_cleaner'
 require 'simplecov'
+require 'aasm/rspec'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -16,7 +17,9 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-SimpleCov.start
+SimpleCov.start do
+  add_filter %r{^/spec/}
+end
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
