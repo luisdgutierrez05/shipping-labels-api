@@ -54,6 +54,12 @@ group :development do
   # Automatically generate an entity-relationship diagram (ERD) for your Rails models.
   gem 'rails-erd', '~> 1.6', '>= 1.6.1'
 
+  # Ruby on Rails model and controller UML class diagram generator.
+  gem 'railroady', '~> 1.6'
+
+  # Automatically generate diagrams of AASM state machines.
+  gem 'aasm-diagram', '~> 0.1.3'
+
   # Automatic Rails code style checking tool.
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
