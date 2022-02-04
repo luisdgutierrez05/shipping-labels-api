@@ -1,0 +1,22 @@
+attributes:
+  - content
+  - foreign_key
+  - inheritance
+disconnected: true
+filename: diagrams/database-erd
+filetype: pdf
+indirect: true
+inheritance: false
+markup: true
+notation: simple
+orientation: vertical
+polymorphism: true
+sort: true
+warn: true
+title: Shipping Labels API - Entity-Relationship Diagram
+exclude: null
+only: null
+only_recursion_depth: null
+prepend_primary: false
+cluster: false
+splines: spline

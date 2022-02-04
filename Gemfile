@@ -51,6 +51,9 @@ group :development do
   # Annotates Rails/ActiveRecord Models based on the database schema.
   gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
 
+  # Automatically generate an entity-relationship diagram (ERD) for your Rails models.
+  gem 'rails-erd', '~> 1.6', '>= 1.6.1'
+
   # Automatic Rails code style checking tool.
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
