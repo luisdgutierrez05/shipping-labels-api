@@ -7,8 +7,20 @@ ruby "3.0.3"
 # AASM is a continuation of the acts-as-state-machine rails plugin, built for plain Ruby objects.
 gem 'aasm', '~> 5.2'
 
+# Allows you to generate your JSON in an object-oriented and convention-driven manner.
+gem 'active_model_serializers', '~> 0.10.13'
+
+# A library for bulk inserting data using ActiveRecord.
+gem 'activerecord-import', '~> 1.3'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+
+# Makes http fun! Also, makes consuming restful web services dead easy.
+gem 'httparty', '~> 0.20.0'
+
+# A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard.
+gem 'jwt', '~> 2.3'
 
 # Use PostgreSQL as the database for Active Record.
 gem 'pg', '~> 1.3', '>= 1.3.1'
@@ -21,6 +33,12 @@ gem "rails", "~> 7.0.1"
 
 # Resque is a Redis-backed Ruby library for creating background jobs.
 gem 'resque', '~> 2.2'
+
+# Light weight job scheduling on top of Resque
+gem 'resque-scheduler', '~> 4.5'
+
+# rubyzip is a ruby module for reading and writing zip files
+gem 'rubyzip', '~> 2.3', '>= 2.3.2'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
