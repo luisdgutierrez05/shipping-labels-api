@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_04_004515) do
+ActiveRecord::Schema.define(version: 2022_02_07_184829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2022_02_04_004515) do
 
   create_table "shipment_batches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "state"
-    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_004515) do
     t.jsonb "shipment_details", default: {}, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "file_url"
     t.index ["shipment_batch_id"], name: "index_shipment_labels_on_shipment_batch_id"
   end
 
