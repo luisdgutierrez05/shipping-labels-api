@@ -1,0 +1,11 @@
+{
+  "data": {
+    "id": "4deaefac-6b0f-4cd3-8f17-5ee59f67131a",
+    "type": "shipment-batches",
+    "attributes": {
+      "state": "processing",
+      "file-id": "na0b9e11-e1c2-46d8-99e6-53ac282ba13c",
+      "url": "localhost:3000/api/v1/shipment_labels/files/na0b9e11-e1c2-46d8-99e6-53ac282ba13c"
+    }
+  }
+}

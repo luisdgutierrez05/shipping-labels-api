@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "aec27173-cc62-4cdb-b155-4b71dee9f98e",
+		"name": "Shipping Label API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"shipping_labels\": [\n    {\n      \"carrier\": \"fake_carrier\",\n      \"shipment\": {\n        \"address_from\": {\n          \"name\": \"Fernando López\",\n          \"street1\": \"Av. Principal #123\",\n          \"city\": \"Azcapotzalco\",\n          \"province\": \"Ciudad de México\",\n          \"postal_code\": \"02900\",\n          \"country_code\": \"MX\"\n        },\n        \"address_to\": {\n          \"name\": \"Isabel Arredondo\",\n          \"street1\": \"Av. Las Torres #123\",\n          \"city\": \"Puebla\",\n          \"province\": \"Puebla\",\n          \"postal_code\": \"72450\",\n          \"country_code\": \"MX\"\n        },\n        \"parcels\": [\n          {\n            \"length\": 40,\n            \"width\": 40,\n            \"height\": 40,\n            \"dimensions_unit\": \"CM\",\n            \"weight\": 5,\n            \"weight_unit\": \"KG\"\n          }\n        ]\n      }\n    },\n    {\n      \"carrier\": \"fake_carrier\",\n      \"shipment\": {\n        \"address_from\": {\n          \"name\": \"Verónica Bravo\",\n          \"street1\": \"Av. Adolfo Prieto #157-6\",\n          \"city\": \"Nuevo León\",\n          \"province\": \"Monterrey\",\n          \"postal_code\": \"64010\",\n          \"country_code\": \"MX\"\n        },\n        \"address_to\": {\n          \"name\": \"Jorge Mendoza\",\n          \"street1\": \"Calle 62 #2568\",\n          \"city\": \"Mérida\",\n          \"province\": \"Yucatán\",\n          \"postal_code\": \"97000\",\n          \"country_code\": \"MX\"\n        },\n        \"parcels\": [\n          {\n            \"length\": 102,\n            \"width\": 52,\n            \"height\": 80,\n            \"dimensions_unit\": \"CM\",\n            \"weight\": 7.5,\n            \"weight_unit\": \"KG\"\n          }\n        ]\n      }\n    },\n    {\n      \"carrier\": \"fake_carrier\",\n      \"shipment\": {\n        \"address_from\": {\n          \"name\": \"Leonardo Rodríguez\",\n          \"street1\": \"Calz. Juárez #58\",\n          \"city\": \"Morelia\",\n          \"province\": \"Michoacan\",\n          \"postal_code\": \"58070\",\n          \"country_code\": \"MX\"\n        },\n        \"address_to\": {\n          \"name\": \"Ruben Arroyo\",\n          \"street1\": \"Calle Esteban Loera #428\",\n          \"city\": \"Guadalajara\",\n          \"province\": \"Jalisco\",\n          \"postal_code\": \"44380\",\n          \"country_code\": \"MX\"\n        },\n        \"parcels\": [\n          {\n            \"length\": 52,\n            \"width\": 98,\n            \"height\": 52,\n            \"dimensions_unit\": \"CM\",\n            \"weight\": 3.68,\n            \"weight_unit\": \"KG\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://localhost:4001/api/shipping_batch_requests",
+					"protocol": "{{protocol}}",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"shipping_batch_requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Request Shipping batch request status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://localhost:4001/api/shipping_batch_requests/78",
+					"protocol": "{{protocol}}",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"shipping_batch_requests",
+						"78"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Request attachment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://localhost:4001/api/attachments/47",
+					"protocol": "{{protocol}}",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"attachments",
+						"47"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

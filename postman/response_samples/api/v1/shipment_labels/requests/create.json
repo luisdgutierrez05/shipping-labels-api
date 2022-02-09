@@ -1,0 +1,9 @@
+{
+  "data": {
+    "id": "4deaefac-6b0f-4cd3-8f17-5ee59f67131a",
+    "type": "shipment-batches",
+    "attributes": {
+      "state": "processing"
+    }
+  }
+}
