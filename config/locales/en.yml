@@ -1,2 +1,5 @@
 en:
-  hello: "Hello world"
+  services:
+    shipment_labels:
+      zip_file_generator:
+        missing_urls: 'Missing urls for: %{label_ids}'
