@@ -33,6 +33,9 @@ FactoryBot.define do
         ]
       }
     end
-    shipment_batch
+
+    trait :with_url do
+      file_url { 'https://fake-carrier.s3.amazonaws.com/jwzot6o8n063p6x6pag843xejlwz' }
+    end
   end
 end
