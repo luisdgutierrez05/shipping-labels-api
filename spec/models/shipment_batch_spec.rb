@@ -18,8 +18,8 @@ RSpec.describe ShipmentBatch, type: :model do
   end
 
   describe 'State machine' do
-    context 'states' do
-      let(:shipment_batch) { FactoryBot.create(:shipment_batch) }
+    describe 'States' do
+      let(:shipment_batch) { create(:shipment_batch) }
 
       context 'initial state' do
         subject { shipment_batch }
@@ -34,15 +34,15 @@ RSpec.describe ShipmentBatch, type: :model do
       end
     end
 
-    context 'transitions' do
+    describe 'Transitions' do
       it { is_expected.to transition_from(:pending).to(:processing).on_event(:enqueue) }
       it { is_expected.to transition_from(:processing).to(:completed).on_event(:complete) }
       it { is_expected.to transition_from(:pending).to(:error).on_event(:fail) }
       it { is_expected.to transition_from(:processing).to(:error).on_event(:fail) }
     end
 
-    context 'events' do
-      let(:shipment_batch) { FactoryBot.create(:shipment_batch) }
+    describe 'Events' do
+      let(:shipment_batch) { create(:shipment_batch) }
 
       it 'allows event :enqueue' do
         expect(shipment_batch).to allow_event(:enqueue)
@@ -62,32 +62,32 @@ RSpec.describe ShipmentBatch, type: :model do
 
   describe 'Instance methods' do
     describe '#any_shipment_labels_url_blank?' do
-      let(:shipment_batch) { FactoryBot.create(:shipment_batch) }
+      let(:shipment_batch) { create(:shipment_batch) }
 
       context 'when one of shipment labels have an empty url' do
-        let(:shipment_label) { FactoryBot.create(:shipment_label, shipment_batch: shipment_batch) }
+        let(:shipment_label) { create(:shipment_label, shipment_batch: shipment_batch) }
 
         it 'returns true' do
-          expect(shipment_label.file_url).to be_nil
+          shipment_label.reload
+
           expect(shipment_batch.any_shipment_labels_url_blank?).to be_truthy
         end
       end
 
       context 'when all shipment labels have urls' do
-        let(:shipment_label) { FactoryBot.create(:shipment_label, :with_url, shipment_batch: shipment_batch) }
+        let(:shipment_label) { create(:shipment_label, :with_url, shipment_batch: shipment_batch) }
 
         it 'returns false' do
-          expect(shipment_label.file_url).not_to be_nil
           expect(shipment_batch.any_shipment_labels_url_blank?).to be_falsey
         end
       end
     end
 
     describe '#empty_shipment_labels_urls' do
-      let(:shipment_batch) { FactoryBot.create(:shipment_batch) }
+      let(:shipment_batch) { create(:shipment_batch) }
 
       context 'when some shipment labels have empty file_url attribute' do
-        let(:shipment_label) { FactoryBot.create(:shipment_label, shipment_batch: shipment_batch) }
+        let(:shipment_label) { create(:shipment_label, shipment_batch: shipment_batch) }
 
         it 'returns an array of shipment label ids' do
           shipment_label.reload
@@ -97,7 +97,7 @@ RSpec.describe ShipmentBatch, type: :model do
       end
 
       context 'when all shipment labels have file_url attribute' do
-        let(:shipment_label) { FactoryBot.create(:shipment_label, :with_url, shipment_batch: shipment_batch) }
+        let(:shipment_label) { create(:shipment_label, :with_url, shipment_batch: shipment_batch) }
 
         it 'returns an empty array' do
           expect(shipment_batch.empty_shipment_labels_urls).to eq([])

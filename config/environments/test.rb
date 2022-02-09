@@ -51,3 +51,6 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 end
+
+# Allow generating absolute urls with routing url helpers.
+Rails.application.routes.default_url_options[:host] = 'localhost:3000'
