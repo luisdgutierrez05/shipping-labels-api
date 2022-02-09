@@ -42,15 +42,14 @@ $ rails server or puma
 
 # Code Overview
 
-## Dependencies
-- [active_model_serializers](https://github.com/rails-api/active_model_serializers) - For JSON in an object-oriented and convention-driven manner.
-
 ## Design
 
-[Database ERD](doc/diagrams/database-erd.pdf)
-[State Machine](doc/diagrams/state-machine-shipment-batch.png)
+- Database ERD
+![Database ERD](https://github.com/luisdgutierrez05/shipping-labels-api/blob/main/doc/diagrams/database-erd.pdf)
 
-API:
+- State Machine
+![State Machine](https://github.com/luisdgutierrez05/shipping-labels-api/blob/main/doc/diagrams/state-machine-shipment-batch.png)
+
 
 ## Folders
 - `app/controllers` - Contains the controllers where requests are routed to their actions, where we find and manipulate our models and return them for the views to render.
