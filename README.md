@@ -44,10 +44,16 @@ $ rails server or puma
 
 ## Design
 
-- Database ERD
-![Database ERD](https://github.com/luisdgutierrez05/shipping-labels-api/blob/main/doc/diagrams/database-erd.pdf)
+- [Database ERD](https://github.com/luisdgutierrez05/shipping-labels-api/blob/main/doc/diagrams/database-erd.pdf)
+
+
+- Class diagram
+
+![Class diagram](https://github.com/luisdgutierrez05/shipping-labels-api/blob/main/doc/diagrams/class-diagram.png)
+
 
 - State Machine
+
 ![State Machine](https://github.com/luisdgutierrez05/shipping-labels-api/blob/main/doc/diagrams/state-machine-shipment-batch.png)
 
 
