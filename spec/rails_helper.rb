@@ -7,6 +7,7 @@ require 'rspec/rails'
 require 'support/factory_bot'
 require 'support/shoulda_matchers'
 require 'support/database_cleaner'
+require 'support/helpers/json_helper'
 require 'simplecov'
 require 'aasm/rspec'
 
@@ -27,4 +28,5 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include Rails.application.routes.url_helpers
+  config.include(JsonHelpers)
 end

@@ -53,4 +53,4 @@ Rails.application.configure do
 end
 
 # Allow generating absolute urls with routing url helpers.
-Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+Rails.application.routes.default_url_options[:host] = 'test.domain'
