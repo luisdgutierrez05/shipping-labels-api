@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :shipment_labels do
-        resources :requests, only: %i(create show)
-        resources :files, only: %i(show)
+        resources :requests, only: %i[create show]
+        resources :files, only: %i[show]
       end
     end
   end
